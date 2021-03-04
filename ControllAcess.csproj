@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D0A7EBDC-72AC-473D-82D9-D9B3C7EDFBC3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ControllAcess</RootNamespace>
+    <AssemblyName>ControllAcess</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.19\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.4.2.0\lib\net45\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DXGI, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.DXGI.4.2.0\lib\net45\SharpDX.DXGI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.19\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\AcessoController.cs" />
+    <Compile Include="Controller\CartaoController.cs" />
+    <Compile Include="Controller\ContatoController.cs" />
+    <Compile Include="Controller\EmpresaController.cs" />
+    <Compile Include="Controller\EventoController.cs" />
+    <Compile Include="Controller\LocalController.cs" />
+    <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\PessoaController.cs" />
+    <Compile Include="Controller\UtilController.cs" />
+    <Compile Include="DAO\AcessoDao.cs" />
+    <Compile Include="DAO\CartaoDao.cs" />
+    <Compile Include="DAO\Conection.cs" />
+    <Compile Include="DAO\ContatoDao.cs" />
+    <Compile Include="DAO\EmpresaDao.cs" />
+    <Compile Include="DAO\EventoDao.cs" />
+    <Compile Include="DAO\LocalDao.cs" />
+    <Compile Include="DAO\LoginDao.cs" />
+    <Compile Include="DAO\PessoaDao.cs" />
+    <Compile Include="DAO\UtilDao.cs" />
+    <Compile Include="Model\Entity\Acesso.cs" />
+    <Compile Include="Model\Entity\Cartao.cs" />
+    <Compile Include="Model\Entity\Contato.cs" />
+    <Compile Include="Model\Entity\Empresa.cs" />
+    <Compile Include="Model\Entity\Evento.cs" />
+    <Compile Include="Model\Entity\Funcionario.cs" />
+    <Compile Include="Model\Entity\Local.cs" />
+    <Compile Include="Model\Entity\Ocorrencia.cs" />
+    <Compile Include="Model\Entity\Pessoa.cs" />
+    <Compile Include="Model\Entity\Usuario.cs" />
+    <Compile Include="Util\Sessao.cs" />
+    <Compile Include="View\ViewPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewPessoa.Designer.cs">
+      <DependentUpon>ViewPessoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewAcesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewAcesso.Designer.cs">
+      <DependentUpon>ViewAcesso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewCam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewCam.Designer.cs">
+      <DependentUpon>ViewCam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewCartao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewCartao.Designer.cs">
+      <DependentUpon>ViewCartao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewContato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewContato.Designer.cs">
+      <DependentUpon>ViewContato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewContatoInform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewContatoInform.Designer.cs">
+      <DependentUpon>ViewContatoInform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewEmpresa.Designer.cs">
+      <DependentUpon>ViewEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewEvento.Designer.cs">
+      <DependentUpon>ViewEvento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewEventoInforma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewEventoInforma.Designer.cs">
+      <DependentUpon>ViewEventoInforma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewIndex.Designer.cs">
+      <DependentUpon>ViewIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewLocal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewLocal.Designer.cs">
+      <DependentUpon>ViewLocal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewLogin.Designer.cs">
+      <DependentUpon>ViewLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\ViewAcesso.resx">
+      <DependentUpon>ViewAcesso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewCam.resx">
+      <DependentUpon>ViewCam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewCartao.resx">
+      <DependentUpon>ViewCartao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewContato.resx">
+      <DependentUpon>ViewContato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewContatoInform.resx">
+      <DependentUpon>ViewContatoInform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewEmpresa.resx">
+      <DependentUpon>ViewEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewEvento.resx">
+      <DependentUpon>ViewEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewEventoInforma.resx">
+      <DependentUpon>ViewEventoInforma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewPessoa.resx">
+      <DependentUpon>ViewPessoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewIndex.resx">
+      <DependentUpon>ViewIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewLocal.resx">
+      <DependentUpon>ViewLocal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewLogin.resx">
+      <DependentUpon>ViewLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\back2.jpg" />
+    <None Include="Resources\salvar.png" />
+    <None Include="Resources\camer1.png" />
+    <Content Include="Resources\lscac.ico" />
+    <None Include="Resources\imgx2.png" />
+    <None Include="Resources\imgx.png" />
+    <None Include="Resources\x.png" />
+    <None Include="Resources\checado.png" />
+    <None Include="Resources\config.png" />
+    <None Include="Resources\confi.png" />
+    <None Include="Resources\conf.png" />
+    <None Include="Resources\logoscac2.png" />
+    <None Include="Resources\logoscac.png" />
+    <None Include="Resources\scac1.png" />
+    <None Include="Resources\scac.png" />
+    <None Include="Resources\background1.jpg" />
+    <None Include="Resources\back21.jpg" />
+    <Content Include="Resources\background.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
